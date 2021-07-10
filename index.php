@@ -30,7 +30,7 @@ body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
     background: #222;
-    background-image: url('https://source.unsplash.com/1600x900/?q=<?php echo $city ?>');
+    background-image: url('https://source.unsplash.com/1600x900/?q=rain');
     font-size: 120%;
   }
   
@@ -96,12 +96,12 @@ body {
  .Details{
   visibility:Hidden;
  }
- 
-</style>
- <?php if(isset($_POST['submit']){?>
- <style>
+ <?php if(isset($_POST['submit'])){?>
   .Details{
   visibility:visible;
+ }
+ .body{
+   background-image: url('https://source.unsplash.com/1600x900/?q=<?php echo $result['name']?>');
  }
  </style>
  <?php } ?>
