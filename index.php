@@ -4,7 +4,7 @@
 <?php
  $city="";
      $city=$_POST['city'];
-     $url="http://api.openweathermap.org/data/2.5/weather?q=$city&appid=32287959de9dc6aae8570bed291f7d8e";
+     $url="http://api.openweathermap.org/data/2.5/weather?q=$city&units=metric&appid=32287959de9dc6aae8570bed291f7d8e";
     $ch=curl_init();
     curl_setopt($ch,CURLOPT_URL,$url);
     curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
@@ -109,13 +109,13 @@ body {
   </form>
     <div>
       <h2 class="city"><?php echo $result['name']?></h2>
-      <h1 class="temp"><?php echo round($result['main']['temp'])?>°</h1>
+      <h1 class="temp">Temprature:<?php echo round($result['main']['temp'])?>°</h1>
       <div class="flex">
         <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="icon" />
         <div class="description"><?php echo $result['weather'][0]['main']?></div>
       </div>
-      <div class="humidity"><?php echo round($result['main']['humidity'])?></div>
-      <div class="wind"><?php echo $result['wind']['speed']?> M/H</div>
+      <div class="humidity">Humidity:<?php echo round($result['main']['humidity'])?></div>
+      <div class="wind">Wind Speed:<?php echo $result['wind']['speed']?> M/H</div>
   </div>
 </body>
 </html>
