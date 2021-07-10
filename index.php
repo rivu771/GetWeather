@@ -4,7 +4,7 @@
 <?php
  $city="";
      $city=$_POST['city'];
-     $url="http://api.openweathermap.org/data/2.5/weather?q=$city&appid=32287959de9dc6aae8570bed291f7d8e";
+     $url="http://api.openweathermap.org/data/2.5/weather?q=$city&units=metric&appid=32287959de9dc6aae8570bed291f7d8e";
     $ch=curl_init();
     curl_setopt($ch,CURLOPT_URL,$url);
     curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
@@ -30,7 +30,7 @@ body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
     background: #222;
-    background-image: url('https://source.unsplash.com/1600x900/?q=weather');
+    background-image: url('https://source.unsplash.com/1600x900/?q=<?php echo $city ?>');
     font-size: 120%;
   }
   
@@ -93,7 +93,18 @@ body {
     text-transform: capitalize;
     margin-left: 8px;
   }
+ .Details{
+  visibility:Hidden;
+ }
+ 
 </style>
+ <?php if(isset($_POST['submit']){?>
+ <style>
+  .Details{
+  visibility:visible;
+ }
+ </style>
+ <?php } ?>
 <body>
   <form method="Post">
   <div class="card">
@@ -107,7 +118,7 @@ body {
         </svg></button>
     </div>
      </form>
-    <div >
+    <div class="Details" >
       <h2 class="city"><?php echo $result['name']?></h2>
       <h1 class="temp"><?php echo round($result['main']['temp'])?>°</h1>
       <div class="flex">
