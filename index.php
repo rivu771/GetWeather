@@ -93,21 +93,6 @@ body {
     text-transform: capitalize;
     margin-left: 8px;
   }
-  
-  .weather.loading {
-    visibility: hidden;
-    max-height: 20px;
-    position: relative;
-  }
-  
-  .weather.loading:after {
-    visibility: visible;
-    content: "Loading...";
-    color: white;
-    position: absolute;
-    top: 0;
-    left: 20px;
-  }
 </style>
 <body>
   <form method="Post">
@@ -122,7 +107,7 @@ body {
         </svg></button>
     </div>
      </form>
-    <div class="weather loading">
+    <div >
       <h2 class="city"><?php echo $result['name']?></h2>
       <h1 class="temp"><?php echo round($result['main']['temp'])?>°</h1>
       <div class="flex">
