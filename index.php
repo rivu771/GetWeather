@@ -97,9 +97,7 @@ body {
   visibility:Hidden;
  }
  <?php if(isset($_POST['submit'])){?>
-  .Details{
-  visibility:visible;
- }
+  
  .body{
    background-image: url('https://source.unsplash.com/1600x900/?q=<?php echo $result['name']?>');
  }
@@ -118,7 +116,7 @@ body {
         </svg></button>
     </div>
      </form>
-    <div class="Details" >
+    <div  >
       <h2 class="city"><?php echo $result['name']?></h2>
       <h1 class="temp"><?php echo round($result['main']['temp'])?>°</h1>
       <div class="flex">
