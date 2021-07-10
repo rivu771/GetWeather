@@ -93,10 +93,8 @@ body {
     text-transform: capitalize;
     margin-left: 8px;
   }
- .Details{
-  visibility:Hidden;
- }
-<body <?php if(isset($_POST['submit'])){?> style="background-image: url('https://source.unsplash.com/1600x900/?q=<?php echo $result['name']?>');"<?php } ?>>
+
+<body>
   <form method="Post">
   <div class="card">
     <div class="search">
