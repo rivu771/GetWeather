@@ -96,14 +96,7 @@ body {
  .Details{
   visibility:Hidden;
  }
- <?php if(isset($_POST['submit'])){?>
-  
- .body{
-   background-image: url('https://source.unsplash.com/1600x900/?q=<?php echo $result['name']?>');
- }
- </style>
- <?php } ?>
-<body>
+<body <?php if(isset($_POST['submit'])){?> style="background-image: url('https://source.unsplash.com/1600x900/?q=<?php echo $result['name']?>');"<?php } ?>>
   <form method="Post">
   <div class="card">
     <div class="search">
