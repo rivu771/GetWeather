@@ -140,10 +140,10 @@ body {
       <div class="humidity"><?php echo round($result['main']['humidity'])?></div>
       <div class="wind"><?php echo $result['wind']['speed']?> M/H</div>
     </div>
-    <?php } else{  
-echo '<script>alert($msg)</script>';
-    } 
-?> 
+    <?php } else{?> 
+<script>alert(<?php $msg ?>)</script>';
+    <?php } ?>
+ 
   </div>
   </form>
 
