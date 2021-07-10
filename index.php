@@ -118,7 +118,7 @@ body {
       <h2 class="city"><?php echo $result['name']?></h2>
       <h1 class="temp">Temprature:<?php echo round($result['main']['temp'])?>°</h1>
       <div class="flex">
-        <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="icon" />
+        <img src="https://openweathermap.org/img/wn/<?php echo $result['weather'][0]['icon']."png" ?>" alt="" class="icon" />
         <div class="description"><?php echo $result['weather'][0]['main']?></div>
       </div>
       <div class="humidity">Humidity:<?php echo round($result['main']['humidity'])?></div>
