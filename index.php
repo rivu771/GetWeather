@@ -93,7 +93,7 @@ body {
     text-transform: capitalize;
     margin-left: 8px;
   }
-
+ </style>
 <body>
   <form method="Post">
   <div class="card">
