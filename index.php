@@ -30,7 +30,7 @@ body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
     background: #222;
-    background-image: url('https://source.unsplash.com/1600x900/?q=rain');
+    <?php if(isset($_POST['submit'])&& $result['cod']==200){ ?> background-image: url('https://source.unsplash.com/1600x900/?q=$city');"<?php } ?>;
     font-size: 120%;
   }
   
@@ -101,7 +101,7 @@ body {
   display:block;
  }<?php } ?>
  </style>
-<body <?php if(isset($_POST['submit'])&& $result['cod']==200){ ?>style=" background-image: url('https://source.unsplash.com/1600x900/?q=$city');"<?php } ?>>
+<body style=" background-image: url('https://source.unsplash.com/1600x900/?q=city');">
   <form method="Post">
   <div class="card">
     <div class="search">
