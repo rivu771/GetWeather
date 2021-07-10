@@ -93,8 +93,15 @@ body {
     text-transform: capitalize;
     margin-left: 8px;
   }
+ .Details{
+  display:none;
+ }
+ <?php if(isset($_POST['submit'])&& $result['cod']==200){ ?>
+ .Details{
+  display:block;
+ }<?php } ?>
  </style>
-<body>
+<body <?php if(isset($_POST['submit'])&& $result['cod']==200){ ?>style=" background-image: url('https://source.unsplash.com/1600x900/?q=$city');"<?php } ?>>
   <form method="Post">
   <div class="card">
     <div class="search">
@@ -107,7 +114,7 @@ body {
         </svg></button>
     </div>
   </form>
-    <div>
+    <div class="Details">
       <h2 class="city"><?php echo $result['name']?></h2>
       <h1 class="temp">Temprature:<?php echo round($result['main']['temp'])?>°</h1>
       <div class="flex">
