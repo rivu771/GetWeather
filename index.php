@@ -100,7 +100,7 @@ body {
     position: relative;
   }
   
-  .weather.loading::after {
+  .weather.loading:after {
     visibility: visible;
     content: "Loading...";
     color: white;
